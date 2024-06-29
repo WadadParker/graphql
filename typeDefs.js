@@ -17,4 +17,9 @@ export const typeDefs = `#graphql
         authors: [Author]
         books: [Book]
     }
+
+    type Mutation {
+    addBook(title: String! , publishedYear: Int, authorId: ID!): Book!
+    }
 `
+// Well, we have to add Mutation for the POST requests

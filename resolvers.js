@@ -38,5 +38,14 @@ export const resolvers = {
         books: () => {
             return data.books;
         }
+    },
+    Mutation: {
+        addBook:(parent, args, context, info) => {
+            // If you console the args here, you will see whatever we are sending in the query, we see it over here
+            console.log(args)
+            const newBook = {...args, id: data.books.length + 1}
+            data.books.push(newBook)
+            return {};
+        }
     }
 }
